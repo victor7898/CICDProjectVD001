@@ -88,7 +88,7 @@ jobs:
         DEST_HOST=${{ secrets.DATABRICKS_DEST_HOST }}
         DEST_TOKEN=${{ secrets.DATABRICKS_DEST_TOKEN }}
         CLUSTER_NAME="ClusterProyectVD"
-        
+
         echo "Buscando cluster existente: $CLUSTER_NAME"
         
         # Obtener lista de clusters
