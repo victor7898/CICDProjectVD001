@@ -1,4 +1,4 @@
-circuit_idname: Dynamic Databricks Notebook Deploy
+name: Dynamic Databricks Notebook Deploy
 on:
   push:
     branches:
