@@ -298,7 +298,7 @@ jobs:
               "task_key": "Transform",
               "description": "3.Transform",
               "notebook_task": {
-                "notebook_path": "/smartdata/3.Transform",
+                "notebook_path": "/smartdatayml3/3.Transform",
                 "source": "WORKSPACE",
                 "base_parameters": {
                   "catalogo": "catalog_au",
@@ -337,7 +337,7 @@ jobs:
               "task_key": "Load",
               "description": "4.Load",
               "notebook_task": {
-                "notebook_path": "/smartdata/4.Load",
+                "notebook_path": "/smartdatayml3/4.Load",
                 "source": "WORKSPACE",
                 "base_parameters": {
                   "catalogo": "catalog_au",
@@ -355,10 +355,10 @@ jobs:
               ]
             },
             {
-              "task_key": "5.Grants_Medallion",
+              "task_key": "Grants_Medallion",
               "description": "5.Grants_Medallion",
               "notebook_task": {
-                "notebook_path": "/smartdata/5.Grants_Medallion",
+                "notebook_path": "/smartdatayml3/5.Grants_Medallion",
                 "source": "WORKSPACE"
                 
               },
