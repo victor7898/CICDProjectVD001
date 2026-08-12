@@ -567,7 +567,7 @@ jobs:
               echo "❌ Workflow falló con estado: $state"
               exit 1
               ;;
-            *)
+            
               # Estados: PENDING, RUNNING, TERMINATING
               echo "⏳ Workflow aún ejecutándose..."
               ;;
