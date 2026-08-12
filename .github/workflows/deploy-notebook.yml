@@ -389,7 +389,7 @@ jobs:
             "environment": "production",
             "created_by": "github_actions",
             "project": "automated_deployment",
-            "cluster_used": "cluster_SD"
+            "cluster_used": "ClusterProyectVD"
           }
         }
         EOF
@@ -454,7 +454,7 @@ jobs:
           echo ""
           echo "🖥️  Cluster configurado:"
           echo "Cluster ID: $(echo "$job_details" | jq -r '.settings.tasks[0].existing_cluster_id')"
-          echo "Cluster Name: cluster_SD (reutilizado)"
+          echo "Cluster Name: ClusterProyectVD (reutilizado)"
           
         else
           echo "❌ No se pudo encontrar el workflow creado"
@@ -597,7 +597,7 @@ jobs:
         echo "✅ Tareas configuradas:"
         echo "   - tarea1_notebook1 (ntbk_1)"
         echo "   - tarea2_notebook2 (ntbk_2)"
-        echo "✅ Cluster existente: cluster_SD configurado"
+        echo "✅ Cluster existente: ClusterProyectVD configurado"
         echo "🚀 Workflow ejecutado automáticamente"
         echo ""
         echo "🔗 Accede a tu workspace de Databricks para ver los resultados detallados"
