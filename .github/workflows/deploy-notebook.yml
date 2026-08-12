@@ -97,7 +97,7 @@ jobs:
           -X GET \
           -H "Authorization: Bearer $DEST_TOKEN" \
           -H "Content-Type: application/json" \
-          "$DEST_HOST/api/2.0/clusters/list")
+          "$DEST_HOST/api/2.1/clusters/list")
 
         http_status=$(echo "$response" | sed -n 's/HTTP_STATUS://p')
         clusters_response=$(echo "$response" | sed '/HTTP_STATUS:/d')
