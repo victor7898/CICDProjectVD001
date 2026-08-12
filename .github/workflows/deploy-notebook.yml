@@ -92,10 +92,17 @@ jobs:
         echo "Buscando cluster existente: $CLUSTER_NAME"
         
         # Obtener lista de clusters
-        clusters_response=$(curl -s -X GET \
+        response=$(curl -sS \
+          -w "\nHTTP_STATUS:%{http_code}" \
+          -X GET \
           -H "Authorization: Bearer $DEST_TOKEN" \
+          -H "Content-Type: application/json" \
           "$DEST_HOST/api/2.0/clusters/list")
-        
+
+        http_status=$(echo "$response" | sed -n 's/HTTP_STATUS://p')
+        clusters_response=$(echo "$response" | sed '/HTTP_STATUS:/d')
+
+        echo "HTTP Status: $http_status"
         echo "Clusters response: $clusters_response"
         
         # Extraer cluster_id del cluster especificado
