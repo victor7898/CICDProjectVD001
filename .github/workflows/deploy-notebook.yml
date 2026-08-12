@@ -32,7 +32,7 @@ jobs:
       run: |
         DEST_HOST=${{ secrets.DATABRICKS_DEST_HOST }}
         DEST_TOKEN=${{ secrets.DATABRICKS_DEST_TOKEN }}
-        DEST_BASE="/py/scripts/main"
+        DEST_BASE="/smartdatayml3"
         for file in notebooks_to_deploy/*.py; do
           name=$(basename "$file" .py)
           dest_path="$DEST_BASE/$name"
@@ -92,17 +92,10 @@ jobs:
         echo "Buscando cluster existente: $CLUSTER_NAME"
         
         # Obtener lista de clusters
-        response=$(curl -sS \
-          -w "\nHTTP_STATUS:%{http_code}" \
-          -X GET \
+        clusters_response=$(curl -s -X GET \
           -H "Authorization: Bearer $DEST_TOKEN" \
-          -H "Content-Type: application/json" \
           "$DEST_HOST/api/2.0/clusters/list")
-
-        http_status=$(echo "$response" | sed -n 's/HTTP_STATUS://p')
-        clusters_response=$(echo "$response" | sed '/HTTP_STATUS:/d')
-
-        echo "HTTP Status: $http_status"
+        
         echo "Clusters response: $clusters_response"
         
         # Extraer cluster_id del cluster especificado
