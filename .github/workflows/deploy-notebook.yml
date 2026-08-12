@@ -149,7 +149,7 @@ jobs:
                 "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_au",
-                  "esquema": "bronze"
+                  "esquema": "bronze",
                   "storageName": "adbstoragevd001"
                 }
               },
@@ -171,7 +171,7 @@ jobs:
                 "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_au",
-                  "esquema": "bronze"
+                  "esquema": "bronze",
                   "storageName": "adbstoragevd001"
                 }
               },
@@ -193,7 +193,7 @@ jobs:
                 "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_au",
-                  "esquema": "bronze"
+                  "esquema": "bronze",
                   "storageName": "adbstoragevd001"
                 }
               },
@@ -215,7 +215,7 @@ jobs:
                 "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_au",
-                  "esquema": "bronze"
+                  "esquema": "bronze",
                   "storageName": "adbstoragevd001"
                 }
               },
@@ -237,7 +237,7 @@ jobs:
                 "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_au",
-                  "esquema": "bronze"
+                  "esquema": "bronze",
                   "storageName": "adbstoragevd001"
                 }
               },
@@ -259,7 +259,7 @@ jobs:
                 "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_au",
-                  "esquema": "bronze"
+                  "esquema": "bronze",
                   "storageName": "adbstoragevd001"
                 }
               },
@@ -281,7 +281,7 @@ jobs:
                 "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_au",
-                  "esquema": "bronze"
+                  "esquema": "bronze",
                   "storageName": "adbstoragevd001"
                 }
               },
@@ -302,7 +302,7 @@ jobs:
                 "source": "WORKSPACE",
                 "base_parameters": {
                   "catalogo": "catalog_au",
-                  "esquema_source": "bronze"
+                  "esquema_source": "bronze",
                   "esquema_sink": "silver"
                 }
               },
@@ -341,7 +341,7 @@ jobs:
                 "source": "WORKSPACE",
                 "base_parameters": {
                   "catalogo": "catalog_au",
-                  "esquema_source": "silver"
+                  "esquema_source": "silver",
                   "esquema_sink": "golden"
                 }
               },
