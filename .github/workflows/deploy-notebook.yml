@@ -87,25 +87,16 @@ jobs:
       run: |
         DEST_HOST=${{ secrets.DATABRICKS_DEST_HOST }}
         DEST_TOKEN=${{ secrets.DATABRICKS_DEST_TOKEN }}
-        CLUSTER_NAME="ClusterProyectVD"
+        CLUSTER_NAME="ClusterProyectVDProd"
 
         echo "Buscando cluster existente: $CLUSTER_NAME"
         
         # Obtener lista de clusters
-        response=$(curl -sS \
-          -w "\nHTTP_STATUS:%{http_code}" \
-          -X GET \
+        clusters_response=$(curl -s -X GET \
           -H "Authorization: Bearer $DEST_TOKEN" \
-          -H "Content-Type: application/json" \
-          "$DEST_HOST/api/2.1/clusters/list")
-
-        http_status=$(echo "$response" | sed -n 's/HTTP_STATUS://p')
-        clusters_response=$(echo "$response" | sed '/HTTP_STATUS:/d')
-
-        echo "HTTP Status: $http_status"
+          "$DEST_HOST/api/2.0/clusters/list")
+        
         echo "Clusters response: $clusters_response"
-        echo "JSON completo:"
-        echo "$clusters_response" | jq .
         
         # Extraer cluster_id del cluster especificado
         cluster_id=$(echo "$clusters_response" | jq -r --arg name "$CLUSTER_NAME" '.clusters[]? | select(.cluster_name == $name) | .cluster_id')
@@ -398,7 +389,7 @@ jobs:
             "environment": "production",
             "created_by": "github_actions",
             "project": "automated_deployment",
-            "cluster_used": "ClusterProyectVD"
+            "cluster_used": "ClusterProyectVDProd"
           }
         }
         EOF
@@ -463,7 +454,7 @@ jobs:
           echo ""
           echo "🖥️  Cluster configurado:"
           echo "Cluster ID: $(echo "$job_details" | jq -r '.settings.tasks[0].existing_cluster_id')"
-          echo "Cluster Name: ClusterProyectVD (reutilizado)"
+          echo "Cluster Name: ClusterProyectVDProd (reutilizado)"
           
         else
           echo "❌ No se pudo encontrar el workflow creado"
@@ -606,7 +597,7 @@ jobs:
         echo "✅ Tareas configuradas:"
         echo "   - tarea1_notebook1 (ntbk_1)"
         echo "   - tarea2_notebook2 (ntbk_2)"
-        echo "✅ Cluster existente: ClusterProyectVD configurado"
+        echo "✅ Cluster existente: ClusterProyectVDProd configurado"
         echo "🚀 Workflow ejecutado automáticamente"
         echo ""
         echo "🔗 Accede a tu workspace de Databricks para ver los resultados detallados"
