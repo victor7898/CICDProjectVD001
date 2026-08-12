@@ -373,7 +373,7 @@ jobs:
             }
           ],
           "schedule": {
-            "quartz_cron_expression": "0 0 8 * * ?",
+            "quartz_cron_expression": "0 0 9 * * ?",
             "timezone_id": "America/Lima",
             "pause_status": "PAUSED"
           },
