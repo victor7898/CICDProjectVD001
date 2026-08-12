@@ -131,7 +131,7 @@ jobs:
               "description": "Ejecuta notebook prepambiente",
               "notebook_task": {
                 "notebook_path": "/smartdatayml3/1.Preparacion_Ambiente",
-                "source": "WORKSPACE"
+                "source": "WORKSPACE",
                 "base_parameters": {
                   "storageLocation": "adbstoragevd001"
                 }
@@ -145,7 +145,7 @@ jobs:
               "description": "Ingest_aisle_data",
               "notebook_task": {
                 "notebook_path": "/smartdatayml3/2.1.Ingest_aisle_data",
-                "source": "WORKSPACE"
+                "source": "WORKSPACE",
                 "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_au",
@@ -167,7 +167,7 @@ jobs:
               "description": "Ingest_departments_data",
               "notebook_task": {
                 "notebook_path": "/smartdatayml3/2.2.Ingest_departments_data",
-                "source": "WORKSPACE"
+                "source": "WORKSPACE",
                 "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_au",
@@ -189,7 +189,7 @@ jobs:
               "description": "Ingest_order_products__prior_data",
               "notebook_task": {
                 "notebook_path": "/smartdatayml3/2.3.Ingest_order_products__prior_data",
-                "source": "WORKSPACE"
+                "source": "WORKSPACE",
                 "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_au",
@@ -211,7 +211,7 @@ jobs:
               "description": "order_products__train_data",
               "notebook_task": {
                 "notebook_path": "/smartdatayml3/2.4.order_products__train_data",
-                "source": "WORKSPACE"
+                "source": "WORKSPACE",
                 "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_au",
@@ -233,7 +233,7 @@ jobs:
               "description": "orders_data",
               "notebook_task": {
                 "notebook_path": "/smartdatayml3/2.5.orders_data",
-                "source": "WORKSPACE"
+                "source": "WORKSPACE",
                 "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_au",
@@ -255,7 +255,7 @@ jobs:
               "description": "products_data",
               "notebook_task": {
                 "notebook_path": "/smartdatayml3/2.6.products_data",
-                "source": "WORKSPACE"
+                "source": "WORKSPACE",
                 "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_au",
@@ -277,7 +277,7 @@ jobs:
               "description": "sample_submission_data",
               "notebook_task": {
                 "notebook_path": "/smartdatayml3/2.7.sample_submission_data",
-                "source": "WORKSPACE"
+                "source": "WORKSPACE",
                 "base_parameters": {
                   "container": "raw",
                   "catalogo": "catalog_au",
@@ -299,7 +299,7 @@ jobs:
               "description": "3.Transform",
               "notebook_task": {
                 "notebook_path": "/smartdata/3.Transform",
-                "source": "WORKSPACE"
+                "source": "WORKSPACE",
                 "base_parameters": {
                   "catalogo": "catalog_au",
                   "esquema_source": "bronze"
@@ -338,7 +338,7 @@ jobs:
               "description": "4.Load",
               "notebook_task": {
                 "notebook_path": "/smartdata/4.Load",
-                "source": "WORKSPACE"
+                "source": "WORKSPACE",
                 "base_parameters": {
                   "catalogo": "catalog_au",
                   "esquema_source": "silver"
