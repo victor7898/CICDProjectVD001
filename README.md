@@ -21,7 +21,7 @@ El objetivo principal del proyecto es automatizar la validación, compilación, 
 
 El flujo de trabajo del repositorio sigue las siguientes etapas:
 
-![](/Workspace/Users/victormauriciodelgadomontoya@hotmail.com/CICDProjectVD001/Evidencias/Arquitectura.png)
+![](Evidencias/Arquitectura.png)
 
 1.	Creación de ambiente en azure
 - a.	Creación de grupo de recursos VD-PROJECT
