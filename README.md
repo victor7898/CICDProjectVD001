@@ -21,14 +21,65 @@ El objetivo principal del proyecto es automatizar la validación, compilación, 
 
 El flujo de trabajo del repositorio sigue las siguientes etapas:
 
-1. Desarolllar el ambiente de trabajo por mediod e AZURE.
-![Arquitectura Azure - Databricks_1786632105396.png](./Arquitectura Azure - Databricks_1786632105396.png "Arquitectura Azure - Databricks_1786632105396.png")
-2. Ejecución y rpuebas en ambiente de desarollo de Databricks
-2. Almacenamiento del código en Git.
-![Ejecución Github_1786632178151.png](./Ejecución Github_1786632178151.png "Ejecución Github_1786632178151.png")
-3. Ejecución automática del pipeline.
-![Workflow - pipeline_1786632188697.png](./Workflow - pipeline_1786632188697.png "Workflow - pipeline_1786632188697.png")
-7. Despliegue en el entorno de destino.
+![](/Workspace/Users/victormauriciodelgadomontoya@hotmail.com/CICDProjectVD001/Evidencias/Arquitectura.png)
+
+1.	Creación de ambiente en azure
+- a.	Creación de grupo de recursos VD-PROJECT
+- b.	Creación de Azure Databrics 
+    - Ambiente de desarrollo  adbPojectVD001dev 
+    - Ambiente  Productivo adbPojectVD001Prod
+- c.	Creación de storage account adbstoragevd001
+    - Creación de container 
+        - 1.	Raw
+        - 2.	Metastore
+        - 3.	metastore-adb
+        - 4.	bronze
+        - 5.	silver
+        - 6.	golden
+- d.	Creación de Azure Conector para Azure Databricks
+- e.	Creación de Managed Identity dbmanagedidentity
+- f.	Asignar Managed Identity a Access Conector
+- g.	Permiso de Contributor al ADLS asignando los roles.
+    - Storage Account Contributor
+    - Storage Blob Data Contributor
+    - EventGrid EventSubscription Contributor
+    - torage Queue Data Contributor
+
+2.	Creación de ambiente de en databricks.
+- a.	Creación de Cluster ClusterProyectVD
+- b.	Creación de MetaStore metastoreprojectvd
+    - Creación de usuarios
+    - Creación de grupos de usuarios
+        - 1.	Analytics
+        - 2.	DataScientist
+        - 3.	DBA
+        - 4.	Engineer
+- c.	Eliminació de Cluster ClusterProyectVD del ambiente adbPojectVD001dev y creación del adbPojectVD001Prod para ejecución final
+
+3.	Creación repositorio en GitHub para ejecución automática del procedimiento.
+- a.	Repositorio CICDProjectVD001
+- b.	Conexión entre GitHub y Databricks
+    - Creación de secretos 
+        - 1.	Host_Origen
+        - 2.	Token_Origen
+        - 3.	Host_Destino
+        - 4.	Token_Destino
+- c.	Creación de .YML para ejecución automática 
+- d.	Creación de carpetas en para ejecución del .YML
+    - github/workflows
+    - Dashboard
+    - iDatabricks Accreditation
+    - Datasets
+    - DeltaSharing
+    - Evidencias
+    - vPrepAmb
+    - viProceso
+    - Reversion
+    - Seguridad
+- e.	Creación de Dashboard general por medio de Gini con el fin de tener la información publicada
+- f.	Creación de DeltaSharing para gestión de informes externos como PowerBI.
+4.	Fin del proceso.
+
 
 ## Tecnologías utilizadas
 
